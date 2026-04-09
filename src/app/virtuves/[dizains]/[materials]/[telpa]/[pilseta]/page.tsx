@@ -45,8 +45,8 @@ function dizainLabel(d: Dizains): string {
   const map: Record<Dizains, string> = {
     moderna: 'Moderna',
     klasiska: 'Klasiskā',
-    minimalistiska: 'Minimālistiskā',
-    skandinavu: 'Skandināvu',
+    minimalistiska: 'Minīmālistiskā',
+    skandinavu: 'Skandīnāvu',
     'ar-salu': 'Ar salu',
   }
   return map[d]
@@ -87,7 +87,7 @@ export default function VirtuvePage({ params }: { params: Params }) {
         <table className="w-full text-sm">
           <tbody>
             <tr className="border-b"><td className="py-2 text-gray-500">Dzīvokļa tips</td><td className="py-2 font-medium">{telpaLabel}</td></tr>
-            <tr className="border-b"><td className="py-2 text-gray-500">Standarta platība</td><td className="py-2 font-medium">{platiba}</td></tr>
+            <tr className="border-b"><td className="py-2 text-gray-500">Standarta platiba</td><td className="py-2 font-medium">{platiba}</td></tr>
             <tr className="border-b"><td className="py-2 text-gray-500">Materiāls</td><td className="py-2 font-medium">{materials.toUpperCase()}</td></tr>
             <tr className="border-b"><td className="py-2 text-gray-500">Stils</td><td className="py-2 font-medium">{dizainLabel(dizains)}</td></tr>
             <tr className="border-b"><td className="py-2 text-gray-500">Cena no</td><td className="py-2 font-medium text-brand-gold">€{cena}</td></tr>
@@ -101,7 +101,7 @@ export default function VirtuvePage({ params }: { params: Params }) {
         <h2 className="text-2xl font-bold text-white mb-2">Saņemt bezmaksas konsultāciju</h2>
         <p className="text-gray-400 mb-6 text-sm">Mēs sazināsimies 1 darba dienas laikā</p>
         <form
-          action="https://formspree.io/f/REPLACE_WITH_YOUR_ID"
+          action="https://formspree.io/f/mojkjwrp"
           method="POST"
           className="space-y-4"
         >
