@@ -2,14 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --brand-dark: #1a1a1a;
-  --brand-gold: #c9a96e;
-  --brand-light: #f5f0eb;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-cormorant), Georgia, serif;
+  }
 }
 
-body {
-  background-color: var(--brand-light);
-  color: var(--brand-dark);
-  font-family: 'Georgia', serif;
+@layer components {
+  .section-divider {
+    @apply border-t border-brand-dark/10 my-0;
+  }
+  .gold-line {
+    @apply block w-12 h-px bg-brand-gold mb-4;
+  }
 }
