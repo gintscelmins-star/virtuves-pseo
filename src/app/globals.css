@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-dark: #1a1a1a;
+  --brand-gold: #c9a96e;
+  --brand-light: #f5f0eb;
+}
+
+body {
+  background-color: var(--brand-light);
+  color: var(--brand-dark);
+  font-family: 'Georgia', serif;
+}
