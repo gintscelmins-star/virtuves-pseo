@@ -13,23 +13,23 @@ export const PAKALPOJUMS = {
     },
     {
       nr: '02',
-      nosaukums: 'Dizāinera vizite mājās',
-      apraksts: 'Dizāineris ierodas ar materiālu paraugiem, veic precīzus mērījumus un novērtē telpu. Precīza cena un skice — 24 stundu laikā pēc vizites.',
+      nosaukums: 'Dizāinera vizīte mājās',
+      apraksts: 'Dizāineris ierodas ar materiālu paraugiem, veic precīzus mērījumus un novērtē telpu. Precīza cena un skice — 24 stundu laikā pēc vizītes.',
     },
     {
       nr: '03',
       nosaukums: 'Skice un cena 24 stundu laikā',
-      apraksts: 'Nākamās darba dienas laikā saņemat projekta skici un galīgo cenu. Bez lieka gāidīšanas. Nekādu slēpto izmaksu.',
+      apraksts: 'Nākamās darba dienas laikā saņemat projekta skici un galīgo cenu. Bez lieka gaidīšanas. Nekādu slēpto izmaksu.',
     },
     {
       nr: '04',
       nosaukums: 'Ražošana',
-      apraksts: 'Individuāla izgatavošana mūsu darbnicā ar izvēlētajiem materiāliem — divas līdz četras nedēļas atkarībā no projekta sarežgītības. Jūs saņemat ražošanas foto un progresa atjauninājumus.',
+      apraksts: 'Individuāla izgatavošana mūsu darbnīcā ar izvēlētajiem materiāliem — divas līdz četras nedēļas atkarībā no projekta sarežģītības. Jūs saņemat ražošanas foto un progresa atjauninājumus.',
     },
     {
       nr: '05',
       nosaukums: 'Montāža un nodošana',
-      apraksts: 'Profesionāla uzstādīšana vienas līdz divu dienu laikā, ieskaitot tehniskās iekārtas piesliegumu un galīgo noregulēšanu. Virtuve gatava lietošanai uzreiz.',
+      apraksts: 'Profesionāla uzstādīšana vienas līdz divu dienu laikā, ieskaitot tehniskās iekārtas pieslēgumu un galīgo noregulēšanu. Virtuve gatava lietošanai uzreiz.',
     },
   ],
 
@@ -70,39 +70,39 @@ export const UZNEMUMS = {
   garantija: {
     skaitlis: '10',
     vieniba: 'gadu garantija',
-    apraksts: 'Pilna 10 gadu garantija uz mēbelēm, fasādēm, furnītūru un uzstādīšanu — sedz jebkuru defektu, nodrošinot ātru remontu vai aizstāšanu bez papildu izmaksām. Miers prātā, zinot, ka Tava investicīja ir aizsargāta.',
+    apraksts: 'Pilna 10 gadu garantija uz mēbelēm, fasādēm, furnītūru un uzstādīšanu — sedz jebkuru defektu, nodrošinot ātru remontu vai aizstāšanu bez papildu izmaksām. Miers prātā, zinot, ka Tava investīcija ir aizsargāta.',
   },
 
-  komanda: 'Mūsu komanda — dizāineri ar triju dimensiju vizualizācijas prasmēm, ražotāji un montētāji — strādā saskaņoti, lai katrs solis būtu nevainojams. Dizāinera vizite mājās ļauj izprast Tavu telpu un gaumi, radot dizāinu, kas iederas Tavā dzīvesveidā.',
+  komanda: 'Mūsu komanda — dizāineri ar triju dimensiju vizualizācijas prasmēm, ražotāji un montētāji — strādā saskaņoti, lai katrs solis būtu nevainojams. Dizāinera vizīte mājās ļauj izprast Tavu telpu un gaumi, radot dizāinu, kas iederas Tavā dzīvesveidā.',
 
   atskiribaVirsraksts: 'Kāpēc mēs?',
-  atskiriba: 'Izceļamies ar fokusu tikai uz iebūvējamām virtuvēm: bezmaksas dizāinera vizite mājās, 25 gadu uzticamība un 10 gadu garantija — nevis masu produkti, bet Tava unikālā virtuve. Sazinies tagad un sāc savu stāstu.',
+  atskiriba: 'Izceļamies ar fokusu tikai uz iebūvējamām virtuvēm: bezmaksas dizāinera vizīte mājās, 25 gadu uzticamība un 10 gadu garantija — nevis masu produkti, bet Tava unikālā virtuve. Sazinies tagad un sāc savu stāstu.',
 
-  cta: 'Saņemt bezmaksas viziti',
+  cta: 'Saņemt bezmaksas vizīti',
 }
 
 export const REALIZACIJA = {
   virsraksts: 'No idejas līdz gatavai virtuvei',
 
-  apraksts: 'Skaidrs, pārskatāms process — Tu zini, kas notiek katrā solī. No pirmās vizites līdz gatavai virtuvei parasti trīs līdz sešas nedēļas.',
+  apraksts: 'Skaidrs, pārskatāms process — Tu zini, kas notiek katrā solī. No pirmās vizītes līdz gatavai virtuvei parasti trīs līdz sešas nedēļas.',
 
   soli: [
     {
       nr: 'M1',
       nosaukums: 'Konsultācija un dizāins',
-      apraksts: 'Bezmaksas dizāinera vizite mājās ar materiālu paraugiem. Telpu mērīšana, triju dimensiju vizualizācija un projekta saskaņošana, lai viss atbilstu Tavai gaumei. Precīza cena un skice — 24 stundu laikā.',
+      apraksts: 'Bezmaksas dizāinera vizīte mājās ar materiālu paraugiem. Telpu mērīšana, triju dimensiju vizualizācija un projekta saskaņošana, lai viss atbilstu Tavai gaumei. Precīza cena un skice — 24 stundu laikā.',
       laiks: '1–2 dienas',
     },
     {
       nr: 'M2',
       nosaukums: 'Ražošana',
-      apraksts: 'Pēc apstiprinājuma individuāla izgatavošana mūsu darbnicā ar izvēlētajiem materiāliem. Tu saņem ražošanas foto un regulārus progresa atjauninājumus pa e-pastu vai tālruni.',
+      apraksts: 'Pēc apstiprinājuma individuāla izgatavošana mūsu darbnīcā ar izvēlētajiem materiāliem. Tu saņem ražošanas foto un regulārus progresa atjauninājumus pa e-pastu vai tālruni.',
       laiks: '2–4 nedēļas',
     },
     {
       nr: 'M3',
       nosaukums: 'Montāža un nodošana',
-      apraksts: 'Profesionāla uzstādīšana vienas līdz divu dienu laikā, ieskaitot tehniskās iekārtas piesliegumu un galīgo noregulēšanu. Virtuve gatava lietošanai uzreiz — mēs neaizej am, iekāms viss ir nevainojami izpildīts.',
+      apraksts: 'Profesionāla uzstādīšana vienas līdz divu dienu laikā, ieskaitot tehniskās iekārtas pieslēgumu un galīgo noregulēšanu. Virtuve gatava lietošanai uzreiz — mēs neaizejam, iekāms viss ir nevainojami izpildīts.',
       laiks: '1–2 dienas',
     },
   ],
