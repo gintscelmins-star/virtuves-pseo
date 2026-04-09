@@ -2,25 +2,92 @@
 // Cloud: djz3nqaok
 
 export const GALERIJA: Record<string, string[]> = {
-  // 602 sērija
+
+  // --- 602 sērija ---
   '602-serija_skandinavu': [
     'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740566/602_serija_skandinavu_qcysa2.png',
   ],
   '602-serija_minimalistiska': [
     'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740566/602_serija_minimalsisms_cgvczq.png',
   ],
+  '602-serija_any': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740566/602_serija_skandinavu_qcysa2.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740566/602_serija_minimalsisms_cgvczq.png',
+  ],
 
-  // 316 sērija (hrušcovka)
+  // --- 316 sērija (hrušcovka) ---
   '316-serija-hruscovka_any': [
     'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740565/316_serija_bfwljl.png',
   ],
 
-  // 119 sērija
+  // --- 464 sērija (lietu viešu projekts) ---
+  '464-serija-lietuviesu-projekts_any': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740566/602_serija_skandinavu_qcysa2.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740565/316_serija_bfwljl.png',
+  ],
+
+  // --- 467 sērija (brežneva projekts) ---
+  '467-serija-brezneva-projekts_any': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740565/316_serija_bfwljl.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740566/602_serija_minimalsisms_cgvczq.png',
+  ],
+
+  // --- 119 sērija (jaunais projekts) ---
   '119-serija-jaunais-projekts_minimalistiska': [
     'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740565/119_serija_minimalisms_xxxonw.png',
   ],
+  '119-serija-jaunais-projekts_any': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740565/119_serija_minimalisms_xxxonw.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740568/jaunais_projekts_minimalisms_mqeozz.png',
+  ],
 
-  // 104 sērija (mapēta uz 103)
+  // --- Čehu projekts ---
+  'cehu-projekts_any': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740568/jaunbuve_atvertais_planojums_minimalisms_tto18d.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740567/jaunais_projekts_minimalisms_mqeozz.png',
+  ],
+
+  // --- Jaunbūve ---
+  'jaunbuve_minimalistiska': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740568/jaunbuve_atvertais_planojums_minimalisms_tto18d.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740568/jaunais_projekts_tumsa_j0rs3l.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740567/jaunais_projekts_minimalisms_mqeozz.png',
+  ],
+  'jaunbuve_any': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740568/jaunbuve_atvertais_planojums_minimalisms_tto18d.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740568/jaunais_projekts_tumsa_j0rs3l.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740567/jaunais_projekts_minimalisms_mqeozz.png',
+  ],
+
+  // --- Privātmāja ---
+  'privatmaja_moderna': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740571/privetmaja_moderns_xpvncv.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740570/privatmaja_klasika_g4fv9o.png',
+  ],
+  'privatmaja_klasiska': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740571/privatmaja_klasika_q5knvb.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740570/privatmaja_klasika_g4fv9o.png',
+  ],
+  'privatmaja_any': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740570/privatmaja_gaisa_gtgfzj.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740570/maja_gaisa_vcvtsi.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740567/house_m05ctn.png',
+  ],
+
+  // --- Atverts planōjums ---
+  'atvertais-planojums_any': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740568/jaunbuve_atvertais_planojums_minimalisms_tto18d.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740571/privetmaja_moderns_xpvncv.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740567/house_m05ctn.png',
+  ],
+
+  // --- Studijas dzīvoklis ---
+  'studijas-dzivoklis_any': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740566/602_serija_minimalsisms_cgvczq.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740565/119_serija_minimalisms_xxxonw.png',
+  ],
+
+  // --- 103 sērija ---
   '103-serija_klasiska': [
     'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740564/104_serija_klasika_i0zhfr.png',
   ],
@@ -29,37 +96,40 @@ export const GALERIJA: Record<string, string[]> = {
     'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740563/103_serija_up8zdc.png',
     'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740439/103_serija_rpmn7u.png',
   ],
-
-  // Jaunbūve
-  'jaunbuve_minimalistiska': [
-    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740568/jaunbuve_atvertais_planojums_minimalisms_tto18d.png',
-    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740568/jaunais_projekts_tumsa_j0rs3l.png',
-    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740567/jaunais_projekts_minimalisms_mqeozz.png',
+  '103-serija_any': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740564/104_serija_klasika_i0zhfr.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740564/104_serija_minimalisms_odhafe.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740563/103_serija_up8zdc.png',
   ],
 
-  // Privātmāja
-  'privatmaja_moderna': [
-    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740571/privetmaja_moderns_xpvncv.png',
-    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740570/privatmaja_klasika_g4fv9o.png',
-  ],
-  'privatmaja_klasiska': [
-    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740571/privatmaja_klasika_q5knvb.png',
-  ],
-  'privatmaja_any': [
-    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740570/privatmaja_gaisa_gtgfzj.png',
-    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740570/maja_gaisa_vcvtsi.png',
-    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740567/house_m05ctn.png',
-  ],
-
-  // Skandināvu — vispārīgs
+  // --- Stila fallback (any_dizains) ---
   'any_skandinavu': [
     'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740572/skandinavu_moderns_sm1dt8.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740566/602_serija_skandinavu_qcysa2.png',
+  ],
+  'any_minimalistiska': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740565/119_serija_minimalisms_xxxonw.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740566/602_serija_minimalsisms_cgvczq.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740564/104_serija_minimalisms_odhafe.png',
+  ],
+  'any_moderna': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740571/privetmaja_moderns_xpvncv.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740568/jaunais_projekts_tumsa_j0rs3l.png',
+  ],
+  'any_klasiska': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740564/104_serija_klasika_i0zhfr.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740571/privatmaja_klasika_q5knvb.png',
+  ],
+  'any_ar-salu': [
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740571/privetmaja_moderns_xpvncv.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740570/privatmaja_gaisa_gtgfzj.png',
+    'https://res.cloudinary.com/djz3nqaok/image/upload/v1775740567/house_m05ctn.png',
   ],
 }
 
 /**
- * Atgriež foto sarakstu pēc dizaina un telpas.
- * Meklē: telpa_dizains → telpa_any → any_dizains → fallback visi
+ * Atgriež foto sarakstu pēc dizāina un telpas.
+ * Prioritāte: telpa_dizāins → telpa_any → any_dizāins → pirmie 3 no visiem
  */
 export function getFoto(dizains: string, telpa: string): string[] {
   const key1 = `${telpa}_${dizains}`
@@ -70,7 +140,8 @@ export function getFoto(dizains: string, telpa: string): string[] {
   if (GALERIJA[key2]?.length) return GALERIJA[key2]
   if (GALERIJA[key3]?.length) return GALERIJA[key3]
 
-  // Fallback — pirmie 3 foto no jebkuras kategorijas
+  // Absolūts fallback
   const allFotos = Object.values(GALERIJA).flat()
-  return allFotos.slice(0, 3)
+  const unique = [...new Set(allFotos)]
+  return unique.slice(0, 3)
 }
