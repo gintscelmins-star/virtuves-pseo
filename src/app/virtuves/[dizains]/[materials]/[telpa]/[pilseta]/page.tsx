@@ -1,10 +1,12 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import {
   DIZAINS, MATERIALI, TELPAS, PILSETAS,
   CENAS, TELPAS_PLATIBA, RAZOSANAS_LAIKS,
   type Dizains, type Materialas, type Telpa, type Pilseta
 } from '@/lib/data'
+import { getFoto } from '@/lib/images'
 
 type Params = {
   dizains: Dizains
@@ -69,6 +71,7 @@ export default function VirtuvePage({ params }: { params: Params }) {
   const cena = CENAS[materials]
   const platiba = TELPAS_PLATIBA[telpa]
   const razosana = RAZOSANAS_LAIKS[telpa]
+  const foto = getFoto(dizains, telpa)
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-12">
@@ -80,6 +83,27 @@ export default function VirtuvePage({ params }: { params: Params }) {
       <p className="text-gray-500 mb-8 text-sm">
         {telpaLabel} · {platiba} · no €{cena} · {razosana}
       </p>
+
+      {/* FOTO GALERIJA */}
+      {foto.length > 0 && (
+        <section className="mb-10">
+          <h2 className="text-xl font-semibold mb-4">Virtuves dizaina piemēri</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {foto.map((url, i) => (
+              <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-md">
+                <Image
+                  src={url}
+                  alt={`${dizainLabel(dizains)} virtuve ${telpaLabel} — ${pilsetaLabel} ${i + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority={i === 0}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Datu tabula — HCU aizsardzība */}
       <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
