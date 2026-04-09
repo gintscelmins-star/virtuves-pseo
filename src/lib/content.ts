@@ -1,6 +1,4 @@
 // Saturs tiek rādīts visās PSEO lapās
-// Fonts: Cormorant Garamond (virsraksti) + Inter (teksts)
-// Tonis: premium, pārliecinošs, personisks
 
 export const PAKALPOJUMS = {
   virsraksts: 'Viss iekļauts. Nekādu pārsteigumu.',
@@ -21,17 +19,17 @@ export const PAKALPOJUMS = {
     {
       nr: '03',
       nosaukums: 'Skice un cena 24 stundu laikā',
-      apraksts: 'Nākamās darba dienas laikā saņemat projekta skici un galīgo cenu. Bez liekā gāidīšanas. Nekādu slēpto izmaksu.',
+      apraksts: 'Nākamās darba dienas laikā saņemat projekta skici un galīgo cenu. Bez lieka gāidīšanas. Nekādu slēpto izmaksu.',
     },
     {
       nr: '04',
       nosaukums: 'Ražošana',
-      apraksts: 'Individuāla izgatavošana mūsu darbnicā ar izvēlētajiem materiāliem — divas līdz četras nedēļas atkarībā no projekta sarežġītības. Jūs saņemat ražošanas foto un progresa atjauninājumus.',
+      apraksts: 'Individuāla izgatavošana mūsu darbnicā ar izvēlētajiem materiāliem — divas līdz četras nedēļas atkarībā no projekta sarežgītības. Jūs saņemat ražošanas foto un progresa atjauninājumus.',
     },
     {
       nr: '05',
       nosaukums: 'Montāža un nodošana',
-      apraksts: 'Profesionāla uzstādīšana vienas līdz divu dienu laikā, ieskaitot tehniskās iekārtas piesliegumu un galīgo noregulēšanu. Virtuve gatava lietoš anai uzreiz.',
+      apraksts: 'Profesionāla uzstādīšana vienas līdz divu dienu laikā, ieskaitot tehniskās iekārtas piesliegumu un galīgo noregulēšanu. Virtuve gatava lietošanai uzreiz.',
     },
   ],
 
@@ -55,12 +53,12 @@ export const PAKALPOJUMS = {
 export const UZNEMUMS = {
   virsraksts: 'Tava virtuve. Mūsu aizraušanās.',
 
-  ievads: 'Iedomājies savu sapņu virtuvi — stiling u, funkcionālu un tieši Tev piemērotu, kur katrs stūris izstaro eleganci un ērtumu ikdienas ritmā. Mēs palīdzēsim to īstenot.',
+  ievads: 'Iedomājies savu sapņu virtuvi — stilīgu, funkcionālu un tieši Tev piemērotu, kur katrs stūris izstaro eleganci un ērtumu ikdienas ritmā. Mēs palīdzēsim to īstenot.',
 
   pieredze: {
     skaitlis: '25+',
     vieniba: 'gadi',
-    apraksts: 'Vairāk nekā 25 gadu laikā Latvijā esam izveidojuši tūkstošiem virtuviņu, kas kalpo gadu gadiem, pielāgojoties ģimenes vajadzībām un jaunākajām tend encēm. Tava virtuve būs ne tikai skaista, bet arī praktiska ilgtermoņā.',
+    apraksts: 'Vairāk nekā 25 gadu laikā Latvijā esam izveidojuši tūkstošiem virtuviņu, kas kalpo gadu gadiem, pielāgojoties ģimenes vajadzībām un jaunākajām tendencēm. Tava virtuve būs ne tikai skaista, bet arī praktiska ilgtermiņā.',
   },
 
   projekti: {
@@ -75,7 +73,7 @@ export const UZNEMUMS = {
     apraksts: 'Pilna 10 gadu garantija uz mēbelēm, fasādēm, furnītūru un uzstādīšanu — sedz jebkuru defektu, nodrošinot ātru remontu vai aizstāšanu bez papildu izmaksām. Miers prātā, zinot, ka Tava investicīja ir aizsargāta.',
   },
 
-  komanda: 'Mūsu komanda — dizāineri ar trimārs dimensiju vizualizācijas prasmēm, ražotāji un montētāji — strādā saskaņoti, lai katrs solis būtu nevainojams. Dizāinera vizite mājās ļauj izprast Tavu telpu un gaumi, radot dizāinu, kas iederas Tavā dzīvesveidā.',
+  komanda: 'Mūsu komanda — dizāineri ar triju dimensiju vizualizācijas prasmēm, ražotāji un montētāji — strādā saskaņoti, lai katrs solis būtu nevainojams. Dizāinera vizite mājās ļauj izprast Tavu telpu un gaumi, radot dizāinu, kas iederas Tavā dzīvesveidā.',
 
   atskiribaVirsraksts: 'Kāpēc mēs?',
   atskiriba: 'Izceļamies ar fokusu tikai uz iebūvējamām virtuvēm: bezmaksas dizāinera vizite mājās, 25 gadu uzticamība un 10 gadu garantija — nevis masu produkti, bet Tava unikālā virtuve. Sazinies tagad un sāc savu stāstu.',
@@ -92,7 +90,7 @@ export const REALIZACIJA = {
     {
       nr: 'M1',
       nosaukums: 'Konsultācija un dizāins',
-      apraksts: 'Bezmaksas dizāinera vizite mājās ar materiālu paraugiem. Telpu mērīšana, trīsdimensiju vizualizācija un projekta saskaņošana, lai viss atbilstu Tavai gaumei. Precīza cena un skice — 24 stundu laikā.',
+      apraksts: 'Bezmaksas dizāinera vizite mājās ar materiālu paraugiem. Telpu mērīšana, triju dimensiju vizualizācija un projekta saskaņošana, lai viss atbilstu Tavai gaumei. Precīza cena un skice — 24 stundu laikā.',
       laiks: '1–2 dienas',
     },
     {
@@ -104,7 +102,7 @@ export const REALIZACIJA = {
     {
       nr: 'M3',
       nosaukums: 'Montāža un nodošana',
-      apraksts: 'Profesionāla uzstādīšana vienas līdz divu dienu laikā, ieskaitot tehniskās iekārtas piesliegumu un galīgo noregulēšanu. Virtuve gatava lietoš anai uzreiz — mēs neaizej am, iekams viss ir nevainojami izpildīts.',
+      apraksts: 'Profesionāla uzstādīšana vienas līdz divu dienu laikā, ieskaitot tehniskās iekārtas piesliegumu un galīgo noregulēšanu. Virtuve gatava lietošanai uzreiz — mēs neaizej am, iekāms viss ir nevainojami izpildīts.',
       laiks: '1–2 dienas',
     },
   ],
