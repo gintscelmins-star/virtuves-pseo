@@ -8,6 +8,7 @@ import {
 } from '@/lib/data'
 import { PAKALPOJUMS, UZNEMUMS, REALIZACIJA } from '@/lib/content'
 import { getFoto } from '@/lib/images'
+import { CtaHero, CtaSticky, CtaFloating, CtaForm } from '@/components/CtaButtons'
 
 type Params = {
   dizains: Dizains
@@ -34,9 +35,10 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { dizains, materials, telpa, pilseta } = params
   const pilsetaLabel = pilsetaCapitalized(pilseta)
   const telpaLabel = telpa.replace(/-/g, ' ')
+  const mat = MATERIALU_APRAKSTI[materials]
   return {
-    title: `${dizainLabel(dizains)} virtuve — ${materials.toUpperCase()} — ${telpaLabel} — ${pilsetaLabel}`,
-    description: `Iebūvējama ${dizainLabel(dizains).toLowerCase()} virtuve no ${mat_label(materials)} — ${telpaLabel}, ${pilsetaLabel}. Cena no €${CENAS[materials]}. Ražošanas laiks: ${RAZOSANAS_LAIKS[telpa]}. Bezmaksas dizāinera vizite mājās.`,
+    title: `${dizainLabel(dizains)} virtuve — ${mat.nosaukums} — ${telpaLabel} — ${pilsetaLabel}`,
+    description: `Iebūvējama ${dizainLabel(dizains).toLowerCase()} virtuve no ${mat.nosaukums} — ${telpaLabel}, ${pilsetaLabel}. Cena no €${CENAS[materials]}. Ražošanas laiks: ${RAZOSANAS_LAIKS[telpa]}. Bezmaksas dizāinera vizite mājās.`,
     alternates: { canonical: `/virtuves/${dizains}/${materials}/${telpa}/${pilseta}/` }
   }
 }
@@ -50,16 +52,6 @@ function dizainLabel(d: Dizains): string {
     'ar-salu': 'Ar salu',
   }
   return map[d]
-}
-
-function mat_label(m: Materialas): string {
-  const map: Record<Materialas, string> = {
-    mdf: 'MDF',
-    laminats: 'lamināta',
-    koks: 'masīvkoka',
-    akrils: 'akrila',
-  }
-  return map[m]
 }
 
 function pilsetaCapitalized(p: string) {
@@ -86,32 +78,31 @@ export default function VirtuvePage({ params }: { params: Params }) {
   const foto = getFoto(dizains, telpa)
   const mat = MATERIALU_APRAKSTI[materials]
   const baseUrl = 'https://pseo.iebuvejamasvirtuves.lv'
+  const ctaProps = { dizains, materials, telpa, pilseta }
 
-  // FAQ dinamiski
   const faq = [
     {
       q: `Cik maksā ${dizainLabel(dizains).toLowerCase()} virtuve ${telpaLabel} ${pilsetaLabel}?`,
-      a: `${dizainLabel(dizains)} iebūvējamās virtuves cena ${telpaLabel} dzīvoklī sākas no €${cena}. Galvā cena atkarīga no izvei dotā materiāla, aprīkojuma un telpu izmēriem. Precizu cenu saņemat 24 stundu laikā pēc bezmaksas dizāinera vizites.`,
+      a: `${dizainLabel(dizains)} iebūvējamās virtuves cena ${telpaLabel} dzīvoklī sākas no €${cena}. Precīzu cenu saņemat 24 stundu laikā pēc bezmaksas dizāinera vizites.`,
     },
     {
-      q: `Cik ilgi ražo ${materials.toUpperCase()} virtuvi ${telpaLabel}?`,
-      a: `${mat.nosaukums} virtuves ražošanas laiks ${telpaLabel} ir ${razosana}. Tajā iekļauta individuāla izgatavošana mūsu darbnicā, montāža un galīgais noregulējums.`,
+      q: `Cik ilgi ražo ${mat.nosaukums} virtuvi ${telpaLabel}?`,
+      a: `${mat.nosaukums} virtuves ražošanas laiks ${telpaLabel} ir ${razosana}. Tajā iekļauta individuāla izgatavošana, montāža un galīgais noregulējums.`,
     },
     {
       q: `Vai piedāvājat bezmaksas konsultāciju ${pilsetaLabel}?`,
-      a: `Jā, mēs piedāvājam bezmaksas dizāinera viziti mājās visā Latvijā, arī ${pilsetaLabel}. Dizāineris ierodas ar materiālu paraugiem, veic mērījumus un sagat avo skici 24 stundu laikā.`,
+      a: `Jā, mēs piedāvājam bezmaksas dizāinera viziti mājās visā Latvijā, arī ${pilsetaLabel}. Dizāineris ierodas ar materiālu paraugiem un sagatavo skici 24 stundu laikā.`,
     },
     {
       q: `Kāda garantija ir uz ${mat.nosaukums} virtuvi?`,
-      a: `Uz visām mūsu virtuvēm, ieskaitot ${mat.nosaukums} modelļus, ir 10 gadu garantija. Tā sedz mēbeles, fasādes, furnītūru un uzstādīšanu.`,
+      a: `Uz visām mūsu virtuvēm, ieskaitot ${mat.nosaukums} modeļus, ir 10 gadu garantija. Tā sedz mēbeles, fasādes, furnītūru un uzstādīšanu.`,
     },
     {
-      q: `Kādā atirībā ${dizainLabel(dizains)} virtuve no citiem stiliem?`,
+      q: `Kādā atirībā ${dizainLabel(dizains)} stils no citiem?`,
       a: `${dizainLabel(dizains)} stils izceļas ar savdabīgu estētiku un funkcionālitāti. Mēs rūpīgi pielāgojam katru projektu klienta telpai un personiskajai gaumei.`,
     },
   ]
 
-  // JSON-LD Schema
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -129,7 +120,7 @@ export default function VirtuvePage({ params }: { params: Params }) {
       {
         '@type': 'Product',
         name: `${dizainLabel(dizains)} iebūvējama virtuve — ${mat.nosaukums} — ${telpaLabel}`,
-        description: `Iebūvējama ${dizainLabel(dizains).toLowerCase()} virtuve no ${mat.nosaukums} ${pilsetaLabel}. Platiba ${platiba}. Ražošanas laiks ${razosana}.`,
+        description: `Iebūvējama ${dizainLabel(dizains).toLowerCase()} virtuve no ${mat.nosaukums} ${pilsetaLabel}. Platība ${platiba}. Ražošanas laiks ${razosana}.`,
         brand: { '@type': 'Brand', name: 'Iebūvējāmās Virtuves' },
         offers: {
           '@type': 'Offer',
@@ -152,7 +143,6 @@ export default function VirtuvePage({ params }: { params: Params }) {
 
   return (
     <>
-      {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -166,12 +156,7 @@ export default function VirtuvePage({ params }: { params: Params }) {
             <p className="text-white/60 text-xs font-inter hidden sm:block">
               {dizainLabel(dizains)} virtuve · {mat.nosaukums} · no €{cena}
             </p>
-            <a
-              href="https://iebuvejamasvirtuves.lv"
-              className="ml-auto bg-brand-gold text-brand-dark text-xs tracking-[0.12em] uppercase font-inter font-medium px-6 py-2 hover:bg-white transition-colors duration-200 whitespace-nowrap"
-            >
-              Saņemt projektu 24h →
-            </a>
+            <CtaSticky {...ctaProps} />
           </div>
         </div>
 
@@ -192,7 +177,7 @@ export default function VirtuvePage({ params }: { params: Params }) {
           </ol>
         </nav>
 
-        {/* HERO SEKCIJA */}
+        {/* HERO */}
         <section className="bg-brand-dark text-white px-6 py-16 md:py-24">
           <div className="max-w-4xl mx-auto">
             <span className="gold-line"></span>
@@ -205,12 +190,7 @@ export default function VirtuvePage({ params }: { params: Params }) {
             <p className="font-cormorant text-xl md:text-2xl text-white/70 italic mb-8">
               {mat.nosaukums} — no €{cena} · {razosana}
             </p>
-            <a
-              href="https://iebuvejamasvirtuves.lv"
-              className="inline-block border border-brand-gold text-brand-gold px-8 py-3 text-xs tracking-[0.15em] uppercase hover:bg-brand-gold hover:text-brand-dark transition-all duration-300"
-            >
-              Saņemt projektu 24h laikā
-            </a>
+            <CtaHero {...ctaProps} />
           </div>
         </section>
 
@@ -314,7 +294,7 @@ export default function VirtuvePage({ params }: { params: Params }) {
           <span className="gold-line"></span>
           <h2 className="font-cormorant text-3xl font-light mb-3">{REALIZACIJA.virsraksts}</h2>
           <p className="text-brand-dark/60 text-sm font-inter mb-10">{REALIZACIJA.apraksts}</p>
-          <div className="space-y-0 divide-y divide-brand-dark/10">
+          <div className="divide-y divide-brand-dark/10">
             {REALIZACIJA.soli.map((solis) => (
               <div key={solis.nr} className="flex gap-8 items-start py-6">
                 <div className="text-center shrink-0 w-12">
@@ -370,42 +350,17 @@ export default function VirtuvePage({ params }: { params: Params }) {
           </div>
         </section>
 
-        {/* CTA SEKCIJA */}
+        {/* CTA FORMA */}
         <section className="bg-brand-dark text-white">
           <div className="max-w-4xl mx-auto px-6 py-16 text-center">
             <span className="block w-12 h-px bg-brand-gold mx-auto mb-6"></span>
             <h2 className="font-cormorant text-4xl md:text-5xl font-light mb-3">Saņemt bezmaksas konsultāciju</h2>
             <p className="text-white/50 text-sm font-inter mb-10">Mēs sazināsimies vienas darba dienas laikā</p>
-            <form action="https://formspree.io/f/mojkjwrp" method="POST" className="max-w-sm mx-auto space-y-3">
-              <input type="hidden" name="_subject" value={`Pieprasījums: ${dizains} ${materials} ${telpa} ${pilseta}`} />
-              <input type="hidden" name="lapas_konteksts" value={`${dizains} / ${materials} / ${telpa} / ${pilseta}`} />
-              <input
-                type="text" name="vards" placeholder="Vārds" required
-                className="w-full px-5 py-3 bg-transparent border border-white/20 text-white placeholder-white/30 text-sm font-inter focus:outline-none focus:border-brand-gold transition-colors"
-              />
-              <input
-                type="tel" name="telefons" placeholder="Telefons" required
-                className="w-full px-5 py-3 bg-transparent border border-white/20 text-white placeholder-white/30 text-sm font-inter focus:outline-none focus:border-brand-gold transition-colors"
-              />
-              <button
-                type="submit"
-                className="w-full py-3 bg-brand-gold text-brand-dark text-xs tracking-[0.15em] uppercase font-inter font-medium hover:bg-white transition-colors duration-300"
-              >
-                Nosūtīt pieprasījumu
-              </button>
-            </form>
+            <CtaForm {...ctaProps} />
           </div>
         </section>
 
-        {/* PELD0ŠĀ CTA POGA */}
-        <a
-          href="https://iebuvejamasvirtuves.lv"
-          className="fixed bottom-6 right-6 z-50 bg-brand-gold text-brand-dark text-xs tracking-[0.12em] uppercase font-inter font-medium px-5 py-3 shadow-2xl hover:bg-brand-dark hover:text-brand-gold border border-brand-gold transition-all duration-300 flex items-center gap-2"
-          aria-label="Saņemt bezmaksas konsultāciju"
-        >
-          <span>Konsultācija</span>
-          <span className="text-base leading-none">→</span>
-        </a>
+        <CtaFloating {...ctaProps} />
 
       </main>
     </>

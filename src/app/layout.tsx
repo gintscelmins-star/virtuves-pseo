@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Inter } from 'next/font/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -34,7 +35,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="lv" className={`${cormorant.variable} ${inter.variable}`}>
-      <body className="bg-brand-light text-brand-dark font-inter antialiased">{children}</body>
+      <body className="bg-brand-light text-brand-dark font-inter antialiased">
+        {children}
+      </body>
+      <GoogleAnalytics gaId="G-TFY7B8EE04" />
     </html>
   )
 }
