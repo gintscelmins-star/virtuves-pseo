@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   },
   description: 'Iebūvējamās virtuves, garderobes un skapji pēc individuāla pasūtījuma. Ražojam Latvijā.',
   metadataBase: new URL('https://pseo.iebuvejamasvirtuves.lv'),
+  verification: {
+    google: 'WoGouaWNuhECL9rx-lUAl4q8FldIDYZp7MKOUEmsK8c',
+  },
 }
 
 export default function RootLayout({
