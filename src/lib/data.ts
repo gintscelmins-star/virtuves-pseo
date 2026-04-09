@@ -83,6 +83,53 @@ export const RAZOSANAS_LAIKS: Record<typeof TELPAS[number], string> = {
   '103-serija': '4–6 nedēļas',
 }
 
+export const MATERIALU_APRAKSTI: Record<typeof MATERIALI[number], {
+  nosaukums: string
+  ievads: string
+  cenaKvalitate: string
+  izturibа: string
+  apstrade: string
+  kapecIzvelеties: string
+  razotajs: string
+}> = {
+  mdf: {
+    nosaukums: 'MDF (EGGER)',
+    ievads: 'MDF ir populārs un praktisks materiāls mēbeļu un interjera izgatavošanai, ko klienti novērtē ikdienas projektos. Tas piedāvā labu cenas/kvalitātes attiecību un vieglu apstrādi.',
+    cenaKvalitate: 'MDF ir ievērojami lētāks nekā masīvkoks, taču nodrošina gludu virsmu un stabilu izskatu. Tas ļauj sasniegt premium efektu par zemāku cenu — ideāli bespoke virtuvēm ar individuālu dizainu.',
+    izturibа: 'MDF ir viendabīgs un izturīgs pret deformācijām ar labu lieces un stiepes izturību. Mēs izmantojam EGGER mitrumizturīgās plātnes (16–19 mm), kas ir īpaši piemērotas virtuvēm un nodrošina augstu pretestību mitrumam un sēnītēm.',
+    apstrade: 'EGGER MDF virsma ir gluda un ideāli piemērota krāsošanai — matēta, pulēta vai ar poliuretāna krāsām, plaša krāsu gamma. To viegli griezt, frēzēt un laminēt, nodrošinot precīzu apstrādi sarežģītiem dizainiem un dziļfrēzētām fasādēm.',
+    kapecIzvelеties: 'Mēs izmantojam tikai EGGER MDF plātnes — Latvijā atzītu ražotāju ar stabilu kvalitāti un plašu sortimentu. EGGER kalibrētās plātnes 16–19 mm biezumā ir standarts profesionāliem mēbeļu ražotājiem, nodrošinot precizitāti un ilgmūžību.',
+    razotajs: 'EGGER',
+  },
+  laminats: {
+    nosaukums: 'Lamināts',
+    ievads: '',
+    cenaKvalitate: '',
+    izturibа: '',
+    apstrade: '',
+    kapecIzvelеties: '',
+    razotajs: '',
+  },
+  koks: {
+    nosaukums: 'Masīvkoks',
+    ievads: '',
+    cenaKvalitate: '',
+    izturibа: '',
+    apstrade: '',
+    kapecIzvelеties: '',
+    razotajs: '',
+  },
+  akrils: {
+    nosaukums: 'Akrils',
+    ievads: '',
+    cenaKvalitate: '',
+    izturibа: '',
+    apstrade: '',
+    kapecIzvelеties: '',
+    razotajs: '',
+  },
+}
+
 export type Dizains = typeof DIZAINS[number]
 export type Krasas = typeof KRASAS[number]
 export type Materialas = typeof MATERIALI[number]
