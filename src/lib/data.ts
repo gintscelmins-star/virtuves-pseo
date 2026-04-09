@@ -87,46 +87,46 @@ export const MATERIALU_APRAKSTI: Record<typeof MATERIALI[number], {
   nosaukums: string
   ievads: string
   cenaKvalitate: string
-  izturibа: string
+  izturiba: string
   apstrade: string
-  kapecIzvelеties: string
+  kapecIzvelaties: string
   razotajs: string
 }> = {
   mdf: {
     nosaukums: 'MDF (EGGER)',
     ievads: 'MDF ir populārs un praktisks materiāls mēbeļu un interjera izgatavošanai, ko klienti novērtē ikdienas projektos. Tas piedāvā labu cenas/kvalitātes attiecību un vieglu apstrādi.',
     cenaKvalitate: 'MDF ir ievērojami lētāks nekā masīvkoks, taču nodrošina gludu virsmu un stabilu izskatu. Tas ļauj sasniegt premium efektu par zemāku cenu — ideāli bespoke virtuvēm ar individuālu dizainu.',
-    izturibа: 'MDF ir viendabīgs un izturīgs pret deformācijām ar labu lieces un stiepes izturību. Mēs izmantojam EGGER mitrumizturīgās plātnes (16–19 mm), kas ir īpaši piemērotas virtuvēm un nodrošina augstu pretestību mitrumam un sēnītēm.',
-    apstrade: 'EGGER MDF virsma ir gluda un ideāli piemērota krāsošanai — matēta, pulēta vai ar poliuretāna krāsām, plaša krāsu gamma. To viegli griezt, frēzēt un laminēt, nodrošinot precīzu apstrādi sarežģītiem dizainiem un dziļfrēzētām fasādēm.',
-    kapecIzvelеties: 'Mēs izmantojam tikai EGGER MDF plātnes — Latvijā atzītu ražotāju ar stabilu kvalitāti un plašu sortimentu. EGGER kalibrētās plātnes 16–19 mm biezumā ir standarts profesionāliem mēbeļu ražotājiem, nodrošinot precizitāti un ilgmūžību.',
+    izturiba: 'MDF ir viendabīgs un izturīgs pret deformācijām ar labu lieces un stiepes izturību. Mēs izmantojam EGGER mitrumizturīgās plātnes (16–19 mm), kas īpaši piemerotas virtuvēm un nodrošina augstu pretestību mitrumam.',
+    apstrade: 'EGGER MDF virsma ir gluda un ideāli piemērota krāsošanai — matēta, pulēta vai ar poliuretāna krāsām. To viegli griezt, frēzēt un laminēt, nodrošinot precīzu apstrādi sarežģītiem dizainiem un dziļfrēzētām fasādēm.',
+    kapecIzvelaties: 'Mēs izmantojam tikai EGGER MDF plātnes — Latvijā atzītu ražotāju ar stabilu kvalitāti. EGGER kalibrētās plātnes 16–19 mm biezumā ir standarts profesionāliem mēbeļu ražotājiem, nodrošinot precizitāti un ilgmūžību.',
     razotajs: 'EGGER',
   },
   laminats: {
-    nosaukums: 'Lamināts',
-    ievads: '',
-    cenaKvalitate: '',
-    izturibа: '',
-    apstrade: '',
-    kapecIzvelеties: '',
-    razotajs: '',
+    nosaukums: 'Lamināts (EGGER)',
+    ievads: 'Latvijā iebūvejamām virtuvēm klienti bieižāk izvēlas laminātu kā praktisku un ekonomisku risinājumu ar plašu dizainu klāstu. EGGER lamināts piedāvā izcilu cenas/kvalitātes attiecību ikdienas virtuvēm.',
+    cenaKvalitate: 'EGGER lamināts piedāvā izcilu attiecību — augsta izturība pret skrāpējumiem un mitrumu par zemāku cenu, ideāli praktiskām virtuvēm ar ikdienas slodzi. Salīdzinājumā ar akrilu vai koku tas ir visekonomiskākais variants bez kompromisiem izskatā.',
+    izturiba: 'EGGER lamināts ir ļoti izturīgs pret UV, mitrumu un baktērijām, ar augstu pretestību skrāpējumiem — ideāls ģimenei ar bērniem. Tas saglabā izskatu gadiem ilgi bez spēcīgām uzturēšanas prasibām.',
+    apstrade: 'EGGER lamināts jau nāk gatavs ar plašu dizainu klāstu — koka, akmens un krāsainas imitācijas. Ātrā uzstādīšana un viegla tīrīšana padara to par vienu no popuļārākajiem variantiem Latvijā.',
+    kapecIzvelaties: 'Lamināts EGGER ir praktisks ikdienas varonis — lēts, daudz,vēdīgs dizāins, izturīgs, ātri uzstādāms bez kompromisiem kvalitātē. Optimāla izvēle, ja vēlies mūsdīgīu izskatu ar saprātīgu budžetu.',
+    razotajs: 'EGGER',
   },
   koks: {
     nosaukums: 'Masīvkoks',
-    ievads: '',
-    cenaKvalitate: '',
-    izturibа: '',
-    apstrade: '',
-    kapecIzvelеties: '',
-    razotajs: '',
+    ievads: 'Dabīgais koks ir premium izvēle klientiem, kas vēlas ilgstošu skaistumu, siltumu un ekolojičumu savai virtuvē. Tas ir dargākais variants, taču ilgtermīņā atmaksājas ar īstu kvalitāti un unikālu izskatu.',
+    cenaKvalitate: 'Dabīgais koks maksā visvairāk, taču ilgtermīņā atmaksājas — pareizi koptā koka virtuve kalpo 20–30 gadus un kļūst tikai skaistāka. Tā ir investicīja interjera vērtībā, nevis tikai izmaksas.',
+    izturiba: 'Dabisks koks ({īpaši termiski apstrādāts) iztur mitrumu, temperatūru un bojājumus labak par citām alternatīvām. Pareiza lakošana vai eelļošana nodrošina ilgstošu izturību pat virtuves mitrās zonās.',
+    apstrade: 'Koku var lakot, eļoţ, krāsot vai atstāt dabīgā izskistā — katra virtuve ir unikāla. Dabiskā koka tekstura piešk,ir iestīpamī patiesu siltumu un mājīgūmu, ko nev ar vāciens aizstāt ar imitāciju.',
+    kapecIzvelaties: 'Dabisks koks ir ideāls, ja vēlies mājīgu, unikālu un ekolojiču virtuvi ar ilgstošu vērtību. Tā ir izvēle tiem, kas vērtē autentiskumu un gatavi investēt kvalitātē.',
+    razotajs: 'Latvijas un Eiropas koka piegādātāji',
   },
   akrils: {
     nosaukums: 'Akrils',
-    ievads: '',
-    cenaKvalitate: '',
-    izturibа: '',
-    apstrade: '',
-    kapecIzvelеties: '',
-    razotajs: '',
+    ievads: 'Akrils ir premium materiāls modernai virtuvē ar wow-efektu — dziļs spiīdums vai mats, antibakterīāls, viegli tīrāms. Ideāls klientiem, kas vēlas sofistikētu, c Contemporāras dizaina virtuvi.',
+    cenaKvalitate: 'Akrils ir apmēram 2x dārgāks nekā MDF, taču sniedz premium spiīdumu un ārkārtīgu estētiku, ko nevar sasīegt ar citu materiālu. Investicīja, kas izceļ virtuvi un paaugstina mājokļa vērtību.',
+    izturiba: 'Akrils ir ļoti izturīgs pret UV, mitrumu un baktērijām — higiēniskākais variants virtuvei. Netaisa baktēriju un netīrumu uzkrāšanos, viegli tīrāms ar miūkstu drānu.',
+    apstrade: 'Akrils ir pieejams divās versijās — spīdīgais un matētais — ar plašu krāsu gammu. Tas ir uzļikts uz MDF bāzes, nodrošinot stabilu formu un precīzu iestādīšanu. Ātra tīrīšana un ilgstošs spiīdums.',
+    kapecIzvelaties: 'Akrils ir ideāls modernai virtuvēi ar wow-efektu — viegli tīrāms, antibakterīāls un mūsdīgī. Izvēlaties akrilu, ja vēlaties virtuvi, kas izceļas un radīs iespaidu uz kat ru, kurš to ierārda.',
+    razotajs: 'Eiropas akrila piegādātāji',
   },
 }
 
