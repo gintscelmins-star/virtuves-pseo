@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const mat = MATERIALU_APRAKSTI[materials]
   return {
     title: `${dizainLabel(dizains)} virtuve — ${mat.nosaukums} — ${telpaLabel} — ${pilsetaLabel}`,
-    description: `Iebūvējama ${dizainLabel(dizains).toLowerCase()} virtuve no ${mat.nosaukums} — ${telpaLabel}, ${pilsetaLabel}. Cena no €${CENAS[materials]}. Ražošanas laiks: ${RAZOSANAS_LAIKS[telpa]}. Bezmaksas dizāinera vizite mājās.`,
+    description: `Iebūvējama ${dizainLabel(dizains).toLowerCase()} virtuve no ${mat.nosaukums} — ${telpaLabel}, ${pilsetaLabel}. Cena no €${CENAS[materials]}. Ražošanas laiks: ${RAZOSANAS_LAIKS[telpa]}. Bezmaksas dizāinera vizīte mājās.`,
     alternates: { canonical: `/virtuves/${dizains}/${materials}/${telpa}/${pilseta}/` }
   }
 }
@@ -47,8 +47,8 @@ function dizainLabel(d: Dizains): string {
   const map: Record<Dizains, string> = {
     moderna: 'Moderna',
     klasiska: 'Klasiskā',
-    minimalistiska: 'Minīmālistiskā',
-    skandinavu: 'Skandīnāvu',
+    minimalistiska: 'Minimālistiskā',
+    skandinavu: 'Skandināvu',
     'ar-salu': 'Ar salu',
   }
   return map[d]
@@ -83,7 +83,7 @@ export default function VirtuvePage({ params }: { params: Params }) {
   const faq = [
     {
       q: `Cik maksā ${dizainLabel(dizains).toLowerCase()} virtuve ${telpaLabel} ${pilsetaLabel}?`,
-      a: `${dizainLabel(dizains)} iebūvējamās virtuves cena ${telpaLabel} dzīvoklī sākas no €${cena}. Precīzu cenu saņemat 24 stundu laikā pēc bezmaksas dizāinera vizites.`,
+      a: `${dizainLabel(dizains)} iebūvējamās virtuves cena ${telpaLabel} dzīvoklī sākas no €${cena}. Precīzu cenu saņemat 24 stundu laikā pēc bezmaksas dizāinera vizītes.`,
     },
     {
       q: `Cik ilgi ražo ${mat.nosaukums} virtuvi ${telpaLabel}?`,
@@ -91,14 +91,14 @@ export default function VirtuvePage({ params }: { params: Params }) {
     },
     {
       q: `Vai piedāvājat bezmaksas konsultāciju ${pilsetaLabel}?`,
-      a: `Jā, mēs piedāvājam bezmaksas dizāinera viziti mājās visā Latvijā, arī ${pilsetaLabel}. Dizāineris ierodas ar materiālu paraugiem un sagatavo skici 24 stundu laikā.`,
+      a: `Jā, mēs piedāvājam bezmaksas dizāinera vizīti mājās visā Latvijā, arī ${pilsetaLabel}. Dizāineris ierodas ar materiālu paraugiem un sagatavo skici 24 stundu laikā.`,
     },
     {
       q: `Kāda garantija ir uz ${mat.nosaukums} virtuvi?`,
       a: `Uz visām mūsu virtuvēm, ieskaitot ${mat.nosaukums} modeļus, ir 10 gadu garantija. Tā sedz mēbeles, fasādes, furnītūru un uzstādīšanu.`,
     },
     {
-      q: `Kādā atirībā ${dizainLabel(dizains)} stils no citiem?`,
+      q: `Kādā atšķirībā ir ${dizainLabel(dizains)} stils no citiem?`,
       a: `${dizainLabel(dizains)} stils izceļas ar savdabīgu estētiku un funkcionālitāti. Mēs rūpīgi pielāgojam katru projektu klienta telpai un personiskajai gaumei.`,
     },
   ]
@@ -311,7 +311,7 @@ export default function VirtuvePage({ params }: { params: Params }) {
           <p className="mt-6 text-xs text-brand-dark/40 font-inter uppercase tracking-widest">⊕ {REALIZACIJA.kopejaisLaiks}</p>
         </section>
 
-        {/* PAR UZņĒMUMU */}
+        {/* PAR UZŅĒMUMU */}
         <section className="bg-brand-cream">
           <div className="max-w-4xl mx-auto px-6 py-12">
             <span className="gold-line"></span>
