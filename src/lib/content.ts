@@ -8,13 +8,13 @@ export const PAKALPOJUMS = {
   soli: [
     {
       nr: '01',
-      nosaukums: 'Bezmaksas konsultācija birojā',
+      nosaukums: 'Bezmaksas konsultācija',
       apraksts: 'Sazināmies divu stundu laikā. Pārrunājam jūsu vēlmes, telpu un budžetu — bez saistībām, bez maksas.',
     },
     {
       nr: '02',
-      nosaukums: 'Dizāinera vizīte mājās',
-      apraksts: 'Dizāineris ierodas ar materiālu paraugiem, veic precīzus mērījumus un novērtē telpu. Precīza cena un skice — 24 stundu laikā pēc vizītes.',
+      nosaukums: 'Dizainera vizīte mājās',
+      apraksts: 'Dizaineris ierodas ar materiālu paraugiem, veic precīzus mērījumus un novērtē telpu. Precīza cena un skice — 24 stundu laikā pēc vizītes.',
     },
     {
       nr: '03',
@@ -24,7 +24,7 @@ export const PAKALPOJUMS = {
     {
       nr: '04',
       nosaukums: 'Ražošana',
-      apraksts: 'Individuāla izgatavošana mūsu darbnīcā ar izvēlētajiem materiāliem — divas līdz četras nedēļas atkarībā no projekta sarežģītības. Jūs saņemsiet ražošanas foto un progresa atjauninājumus.',
+      apraksts: 'Individuāla izgatavošana mūsu darbnīcā ar izvēlētajiem materiāliem — divas līdz četras nedēļas atkarībā no projekta sarežģītības. Jūs saņemsiet ražošanas foto un regulārus progresa atjauninājumus.',
     },
     {
       nr: '05',
@@ -37,7 +37,7 @@ export const PAKALPOJUMS = {
     virsraksts: 'Cenā iekļauts',
     pozicijas: [
       'Uzmērīšana uz vietas',
-      'Dizāins un projekts',
+      'Dizains un projekts',
       'Ražošana',
       'Piegāde',
       'Iebūvējamās tehnikas integrācija',
@@ -51,32 +51,32 @@ export const PAKALPOJUMS = {
 }
 
 export const UZNEMUMS = {
-  virsraksts: 'Tava virtuve. Mūsu aizraušanās.',
+  virsraksts: 'Jūsu virtuve. Mūsu aizraušanās.',
 
-  ievads: 'Iedomājies savu sapņu virtuvi — stilīgu, funkcionālu un tieši Tev piemērotu, kur katrs stūris izstaro eleganci un ērtumu ikdienas ritmā. Mēs palīdzēsim to īstenot.',
+  ievads: 'Iedomājieties savu sapņu virtuvi — stilīgu, funkcionālu un tieši jums piemērotu, kur katrs stūris apvienots ar eleganci un ikdienas ērtumu. Mēs palīdzēsim to īstenot.',
 
   pieredze: {
     skaitlis: '25+',
     vieniba: 'gadi',
-    apraksts: 'Vairāk nekā 25 gadu laikā Latvijā esam izveidojuši tūkstošiem virtuvju, kas kalpo gadu gadiem, pielāgojoties ģimenes vajadzībām un jaunākajām tendencēm. Tava virtuve būs ne tikai skaista, bet arī praktiska ilgtermiņā.',
+    apraksts: 'Vairāk nekā 25 gadu laikā Latvijā esam izveidojuši tūkstošiem virtuvju, kas kalpo gadiem, pielāgojoties ģimenes vajadzībām un jaunākajām tendencēm. Jūsu virtuve būs ne tikai skaista, bet arī praktiska ilgtermiņā.',
   },
 
   projekti: {
     skaitlis: '984',
     vieniba: 'projekti',
-    apraksts: 'Mēs esam realizējuši 984 pielāgotas virtuves Rīgā un apkārtnē, sākot no moderna minimālisma līdz siltam klasiskajam stilam. Katra virtuve ir unikāla — tāpat kā klients, kas to iegādājās.',
+    apraksts: 'Esam realizējuši 984 pielāgotas virtuves Rīgā un apkārtnē — no moderna minimālisma līdz siltam klasiskajam stilam. Katra virtuve ir unikāla, tāpat kā klients, kas to iegādājās.',
   },
 
   garantija: {
     skaitlis: '10',
     vieniba: 'gadu garantija',
-    apraksts: 'Pilna 10 gadu garantija uz mēbelēm, fasādēm, furnītūru un uzstādīšanu — sedz jebkuru defektu, nodrošinot ātru remontu vai aizstāšanu bez papildu izmaksām. Miers prātā, zinot, ka Tava investīcija ir aizsargāta.',
+    apraksts: 'Pilna 10 gadu garantija uz mēbelēm, fasādēm, furnitūru un uzstādīšanu — sedz jebkuru defektu, nodrošinot ātru remontu vai aizstāšanu bez papildu izmaksām. Jūsu investīcija ir aizsargāta.',
   },
 
-  komanda: 'Mūsu komanda — dizāineri ar triju dimensiju vizualizācijas prasmēm, ražotāji un montētāji — strādā saskaņoti, lai katrs solis būtu nevainojams. Dizāinera vizīte mājās ļauj izprast Tavu telpu un gaumi, radot dizāinu, kas iederas Tavā dzīvesveidā.',
+  komanda: 'Mūsu komanda — dizaineri ar trīsdimensiju vizualizācijas prasmēm, ražotāji un montētāji — strādā saskaņoti, lai katrs solis būtu nevainojams. Dizainera vizīte mājās ļauj izprast jūsu telpu un gaumi, radot risinājumu, kas iederas jūsu dzīvesveidā.',
 
   atskiribaVirsraksts: 'Kāpēc mēs?',
-  atskiriba: 'Izceļamies ar fokusu tikai uz iebūvējamām virtuvēm: bezmaksas dizāinera vizīte mājās, 25 gadu uzticamība un 10 gadu garantija — nevis masu produkti, bet Tava unikālā virtuve. Sazinies tagad un sāc savu stāstu.',
+  atskiriba: 'Esam specializējušies tikai iebūvējamās virtuvēs: bezmaksas dizainera vizīte mājās, 25 gadu pieredze un 10 gadu garantija — nevis sērijveida produkti, bet jūsu unikālā virtuve. Sazinieties tagad un sāciet savu projektu.',
 
   cta: 'Saņemt bezmaksas vizīti',
 }
@@ -84,19 +84,19 @@ export const UZNEMUMS = {
 export const REALIZACIJA = {
   virsraksts: 'No idejas līdz gatavai virtuvei',
 
-  apraksts: 'Skaidrs, pārskatāms process — Tu zini, kas notiek katrā solī. No pirmās vizītes līdz gatavai virtuvei parasti trīs līdz sešas nedēļas.',
+  apraksts: 'Skaidrs, pārskatāms process — jūs zināt, kas notiek katrā solī. No pirmās vizītes līdz gatavai virtuvei parasti trīs līdz sešas nedēļas.',
 
   soli: [
     {
       nr: 'M1',
-      nosaukums: 'Konsultācija un dizāins',
-      apraksts: 'Bezmaksas dizāinera vizīte mājās ar materiālu paraugiem. Telpu mērīšana, triju dimensiju vizualizācija un projekta saskaņošana, lai viss atbilstu Tavai gaumei. Precīza cena un skice — 24 stundu laikā.',
+      nosaukums: 'Konsultācija un dizains',
+      apraksts: 'Bezmaksas dizainera vizīte mājās ar materiālu paraugiem. Telpu mērīšana, trīsdimensiju vizualizācija un projekta saskaņošana, lai viss atbilstu jūsu gaumei. Precīza cena un skice — 24 stundu laikā.',
       laiks: '1–2 dienas',
     },
     {
       nr: 'M2',
       nosaukums: 'Ražošana',
-      apraksts: 'Pēc apstiprinājuma individuāla izgatavošana mūsu darbnīcā ar izvēlētajiem materiāliem. Tu saņemsi ražošanas foto un regulārus progresa atjauninājumus pa e-pastu vai tālruni.',
+      apraksts: 'Pēc apstiprinājuma individuāla izgatavošana mūsu darbnīcā ar izvēlētajiem materiāliem. Jūs saņemsiet ražošanas foto un regulārus progresa atjauninājumus pa e-pastu vai tālruni.',
       laiks: '2–4 nedēļas',
     },
     {
@@ -107,7 +107,7 @@ export const REALIZACIJA = {
     },
   ],
 
-  izmainasPolitika: 'Ja rodas izmaiņas — jauna krāsa, papildu detaļa vai izmēru korekcija — mēs elastīgi pielāgojam projektu bez papildu izmaksām, ja nav būtisku materiālu maiņu. Visas izmaiņas vienmēr saskaņojam ar Tevi iepriekš.',
+  izmainasPolitika: 'Ja rodas izmaiņas — jauna krāsa, papildu detaļa vai izmēru korekcija — mēs elastīgi pielāgojam projektu bez papildu izmaksām, ja nav būtisku materiālu maiņu. Visas izmaiņas vienmēr saskaņojam ar jums iepriekš.',
 
   kopejaisLaiks: '3–6 nedēļas no apstiprinātā projekta līdz gatavai virtuvei',
 
