@@ -83,7 +83,7 @@ export default function VirtuvePage({ params }: { params: Params }) {
   const faq = [
     {
       q: `Cik maksā ${dizainLabel(dizains).toLowerCase()} virtuve ${telpaLabel} ${pilsetaLabel}?`,
-      a: `${dizainLabel(dizains)} iebūvējamās virtuves cena ${telpaLabel} dzīvoklī sākas no €${cena}. Precīzu cenu saņemat 24 stundu laikā pēc bezmaksas dizāinera vizītes.`,
+      a: `${dizainLabel(dizains)} iebūvējamās virtuves cena ${telpaLabel} dzīvoklī sākas no €${cena}. Precīzu cenu saņemsiet 24 stundu laikā pēc bezmaksas dizāinera vizītes.`,
     },
     {
       q: `Cik ilgi ražo ${mat.nosaukums} virtuvi ${telpaLabel}?`,
@@ -98,7 +98,7 @@ export default function VirtuvePage({ params }: { params: Params }) {
       a: `Uz visām mūsu virtuvēm, ieskaitot ${mat.nosaukums} modeļus, ir 10 gadu garantija. Tā sedz mēbeles, fasādes, furnītūru un uzstādīšanu.`,
     },
     {
-      q: `Kādā atšķirībā ir ${dizainLabel(dizains)} stils no citiem?`,
+      q: `Kā ${dizainLabel(dizains)} stils atšķiras no citiem?`,
       a: `${dizainLabel(dizains)} stils izceļas ar savdabīgu estētiku un funkcionālitāti. Mēs rūpīgi pielāgojam katru projektu klienta telpai un personiskajai gaumei.`,
     },
   ]
@@ -121,7 +121,7 @@ export default function VirtuvePage({ params }: { params: Params }) {
         '@type': 'Product',
         name: `${dizainLabel(dizains)} iebūvējama virtuve — ${mat.nosaukums} — ${telpaLabel}`,
         description: `Iebūvējama ${dizainLabel(dizains).toLowerCase()} virtuve no ${mat.nosaukums} ${pilsetaLabel}. Platība ${platiba}. Ražošanas laiks ${razosana}.`,
-        brand: { '@type': 'Brand', name: 'Iebūvējāmās Virtuves' },
+        brand: { '@type': 'Brand', name: 'Iebūvējamās Virtuves' },
         offers: {
           '@type': 'Offer',
           priceCurrency: 'EUR',
