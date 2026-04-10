@@ -3,7 +3,16 @@ import { DIZAINS, MATERIALI, TELPAS, PILSETAS } from '@/lib/data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const BASE = 'https://pseo.iebuvejamasvirtuves.lv'
-  const urls: MetadataRoute.Sitemap = []
+  const lastModified = new Date('2026-04-10')
+  
+  const urls: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE}/`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 1.0,
+    }
+  ]
 
   for (const dizains of DIZAINS) {
     for (const materials of MATERIALI) {
@@ -11,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         for (const pilseta of PILSETAS) {
           urls.push({
             url: `${BASE}/virtuves/${dizains}/${materials}/${telpa}/${pilseta}/`,
-            lastModified: new Date(),
+            lastModified,
             changeFrequency: 'monthly',
             priority: 0.8,
           })
