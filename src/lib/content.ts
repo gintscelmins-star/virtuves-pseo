@@ -19,12 +19,12 @@ export const PAKALPOJUMS = {
     {
       nr: '03',
       nosaukums: 'Skice un cena 24 stundu laikā',
-      apraksts: 'Nākamās darba dienas laikā saņemat projekta skici un galīgo cenu. Bez lieka gaidīšanas. Nekādu slēpto izmaksu.',
+      apraksts: 'Nākamās darba dienas laikā saņemsiet projekta skici un galīgo cenu. Bez lieka gaidīšanas. Nekādu slēpto izmaksu.',
     },
     {
       nr: '04',
       nosaukums: 'Ražošana',
-      apraksts: 'Individuāla izgatavošana mūsu darbnīcā ar izvēlētajiem materiāliem — divas līdz četras nedēļas atkarībā no projekta sarežģītības. Jūs saņemat ražošanas foto un progresa atjauninājumus.',
+      apraksts: 'Individuāla izgatavošana mūsu darbnīcā ar izvēlētajiem materiāliem — divas līdz četras nedēļas atkarībā no projekta sarežģītības. Jūs saņemsiet ražošanas foto un progresa atjauninājumus.',
     },
     {
       nr: '05',
@@ -45,7 +45,7 @@ export const PAKALPOJUMS = {
     ],
   },
 
-  solisanas: 'Skaidra gala cena 24 stundu laikā. Nekādu slēpto izmaksu — tas, ko piekrītat, ir tas, ko maksājat.',
+  solijums: 'Skaidra gala cena 24 stundu laikā. Nekādu slēpto izmaksu — tas, ko piekrītat, ir tas, ko maksājat.',
 
   cta: 'Saņemt bezmaksas konsultāciju',
 }
@@ -58,13 +58,13 @@ export const UZNEMUMS = {
   pieredze: {
     skaitlis: '25+',
     vieniba: 'gadi',
-    apraksts: 'Vairāk nekā 25 gadu laikā Latvijā esam izveidojuši tūkstošiem virtuviņu, kas kalpo gadu gadiem, pielāgojoties ģimenes vajadzībām un jaunākajām tendencēm. Tava virtuve būs ne tikai skaista, bet arī praktiska ilgtermiņā.',
+    apraksts: 'Vairāk nekā 25 gadu laikā Latvijā esam izveidojuši tūkstošiem virtuvju, kas kalpo gadu gadiem, pielāgojoties ģimenes vajadzībām un jaunākajām tendencēm. Tava virtuve būs ne tikai skaista, bet arī praktiska ilgtermiņā.',
   },
 
   projekti: {
     skaitlis: '984',
     vieniba: 'projekti',
-    apraksts: 'Mēs esam realizējuši 984 pielāgotas virtuves Rīgā un apkārtnē, sākot no moderna minimālisma līdz siltam klasiskajam stilam. Katra virtuve ir unikāla — tāpat kā klients, kas to iegūva.',
+    apraksts: 'Mēs esam realizējuši 984 pielāgotas virtuves Rīgā un apkārtnē, sākot no moderna minimālisma līdz siltam klasiskajam stilam. Katra virtuve ir unikāla — tāpat kā klients, kas to iegādājās.',
   },
 
   garantija: {
@@ -96,13 +96,13 @@ export const REALIZACIJA = {
     {
       nr: 'M2',
       nosaukums: 'Ražošana',
-      apraksts: 'Pēc apstiprinājuma individuāla izgatavošana mūsu darbnīcā ar izvēlētajiem materiāliem. Tu saņem ražošanas foto un regulārus progresa atjauninājumus pa e-pastu vai tālruni.',
+      apraksts: 'Pēc apstiprinājuma individuāla izgatavošana mūsu darbnīcā ar izvēlētajiem materiāliem. Tu saņemsi ražošanas foto un regulārus progresa atjauninājumus pa e-pastu vai tālruni.',
       laiks: '2–4 nedēļas',
     },
     {
       nr: 'M3',
       nosaukums: 'Montāža un nodošana',
-      apraksts: 'Profesionāla uzstādīšana vienas līdz divu dienu laikā, ieskaitot tehniskās iekārtas pieslēgumu un galīgo noregulēšanu. Virtuve gatava lietošanai uzreiz — mēs neaizejam, iekāms viss ir nevainojami izpildīts.',
+      apraksts: 'Profesionāla uzstādīšana vienas līdz divu dienu laikā, ieskaitot tehniskās iekārtas pieslēgumu un galīgo noregulēšanu. Virtuve gatava lietošanai uzreiz — mēs neaizejam, kamēr viss nav nevainojami izpildīts.',
       laiks: '1–2 dienas',
     },
   ],
