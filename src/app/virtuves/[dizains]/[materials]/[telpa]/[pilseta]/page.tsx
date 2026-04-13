@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import {
   DIZAINS, MATERIALI, TELPAS, PILSETAS,
   CENAS, TELPAS_PLATIBA, RAZOSANAS_LAIKS, MATERIALU_APRAKSTI,
+  PILSETU_APRAKSTI, TELPU_APRAKSTI, DIZAINU_APRAKSTI,
   type Dizains, type Materialas, type Telpa, type Pilseta
 } from '@/lib/data'
 import { PAKALPOJUMS, UZNEMUMS, REALIZACIJA } from '@/lib/content'
@@ -33,12 +34,13 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { dizains, materials, telpa, pilseta } = params
-  const pilsetaLabel = pilsetaCapitalized(pilseta)
-  const telpaLabel = telpa.replace(/-/g, ' ')
+  const pilsetaLabel = pilsetaLocative(pilseta)
+  const telpaLabel = telpaDisplayName(telpa)
   const mat = MATERIALU_APRAKSTI[materials]
+  const diz = DIZAINU_APRAKSTI[dizains]
   return {
-    title: `${dizainLabel(dizains)} virtuve — ${mat.nosaukums} — ${telpaLabel} — ${pilsetaLabel}`,
-    description: `Iebūvējama ${dizainLabel(dizains).toLowerCase()} virtuve no ${mat.nosaukums} — ${telpaLabel}, ${pilsetaLabel}. Cena no €${CENAS[materials]}. Ražošanas laiks: ${RAZOSANAS_LAIKS[telpa]}. Bezmaksas dizāinera vizīte mājās.`,
+    title: `${dizainLabel(dizains)} virtuve — ${mat.nosaukums} — ${telpaLabel} — ${pilsetaCapitalized(pilseta)}`,
+    description: `${diz.ievads.substring(0, 80)} Iebūvējama virtuve no ${mat.nosaukums} ${telpaLabel} dzīvoklī ${pilsetaLabel}. Cena no €${CENAS[materials]}. Ražošanas laiks: ${RAZOSANAS_LAIKS[telpa]}. Bezmaksas dizainera vizīte.`,
     alternates: { canonical: `/virtuves/${dizains}/${materials}/${telpa}/${pilseta}/` }
   }
 }
@@ -58,6 +60,39 @@ function pilsetaCapitalized(p: string) {
   return p.charAt(0).toUpperCase() + p.slice(1)
 }
 
+function pilsetaLocative(p: Pilseta): string {
+  const map: Record<Pilseta, string> = {
+    riga: 'Rīgā',
+    jurmala: 'Jūrmalā',
+    daugavpils: 'Daugavpilī',
+    jelgava: 'Jelgavā',
+    jekabpils: 'Jēkabpilī',
+    valmiera: 'Valmierā',
+    ventspils: 'Ventspilī',
+    liepaja: 'Liepājā',
+    rezekne: 'Rēzeknē',
+    ogre: 'Ogrē',
+  }
+  return map[p]
+}
+
+function telpaDisplayName(t: Telpa): string {
+  const map: Record<Telpa, string> = {
+    '602-serija': '602. sērijas dzīvoklis',
+    '464-serija-lietuviesu-projekts': '464. sērija (Lietuvisks projekts)',
+    '316-serija-hruscovka': 'Hruščovka (316. sērija)',
+    '467-serija-brezneva-projekts': '467. sērija (Brežneva projekts)',
+    '119-serija-jaunais-projekts': '119. sērija (Jaunais projekts)',
+    'cehu-projekts': 'Cehu projekts',
+    'jaunbuve': 'Jaunbūve',
+    'privatmaja': 'Privātmāja',
+    'atvertais-planojums': 'Atvērtais plānojums',
+    'studijas-dzivoklis': 'Studijas dzīvoklis',
+    '103-serija': '103. sērijas dzīvoklis',
+  }
+  return map[t]
+}
+
 export default function VirtuvePage({ params }: { params: Params }) {
   const { dizains, materials, telpa, pilseta } = params
 
@@ -70,36 +105,39 @@ export default function VirtuvePage({ params }: { params: Params }) {
     notFound()
   }
 
-  const pilsetaLabel = pilsetaCapitalized(pilseta)
-  const telpaLabel = telpa.replace(/-/g, ' ')
+  const pilsetaLoc = pilsetaLocative(pilseta)
+  const telpaLabel = telpaDisplayName(telpa)
   const cena = CENAS[materials]
   const platiba = TELPAS_PLATIBA[telpa]
   const razosana = RAZOSANAS_LAIKS[telpa]
   const foto = getFoto(dizains, telpa)
   const mat = MATERIALU_APRAKSTI[materials]
+  const diz = DIZAINU_APRAKSTI[dizains]
+  const pilsetaInfo = PILSETU_APRAKSTI[pilseta]
+  const telpaInfo = TELPU_APRAKSTI[telpa]
   const baseUrl = 'https://pseo.iebuvejamasvirtuves.lv'
   const ctaProps = { dizains, materials, telpa, pilseta }
 
   const faq = [
     {
-      q: `Cik maksā ${dizainLabel(dizains).toLowerCase()} virtuve ${telpaLabel} ${pilsetaLabel}?`,
-      a: `${dizainLabel(dizains)} iebūvējamās virtuves cena ${telpaLabel} dzīvoklī sākas no €${cena}. Precīzu cenu saņemsiet 24 stundu laikā pēc bezmaksas dizāinera vizītes.`,
+      q: `Cik maksā ${dizainLabel(dizains).toLowerCase()} virtuve ${telpaLabel} ${pilsetaLoc}?`,
+      a: `${dizainLabel(dizains)} iebūvējamās virtuves cena ${telpaLabel} dzīvoklī sākas no €${cena}. Precīzu cenu saņemsiet 24 stundu laikā pēc bezmaksas dizainera vizītes ${pilsetaLoc}.`,
     },
     {
       q: `Cik ilgi ražo ${mat.nosaukums} virtuvi ${telpaLabel}?`,
-      a: `${mat.nosaukums} virtuves ražošanas laiks ${telpaLabel} ir ${razosana}. Tajā iekļauta individuāla izgatavošana, montāža un galīgais noregulējums.`,
+      a: `${mat.nosaukums} virtuves ražošanas laiks ${telpaLabel} ir ${razosana}. ${telpaInfo.padomi}`,
     },
     {
-      q: `Vai piedāvājat bezmaksas konsultāciju ${pilsetaLabel}?`,
-      a: `Jā, mēs piedāvājam bezmaksas dizāinera vizīti mājās visā Latvijā, arī ${pilsetaLabel}. Dizāineris ierodas ar materiālu paraugiem un sagatavo skici 24 stundu laikā.`,
+      q: `Vai piedāvājat bezmaksas konsultāciju ${pilsetaLoc}?`,
+      a: `Jā, piedāvājam bezmaksas dizainera vizīti mājās ${pilsetaLoc}. ${pilsetaInfo.pievedums}`,
     },
     {
       q: `Kāda garantija ir uz ${mat.nosaukums} virtuvi?`,
-      a: `Uz visām mūsu virtuvēm, ieskaitot ${mat.nosaukums} modeļus, ir 10 gadu garantija. Tā sedz mēbeles, fasādes, furnītūru un uzstādīšanu.`,
+      a: `Uz visām mūsu virtuvēm, ieskaitot ${mat.nosaukums} modeļus, ir 10 gadu garantija. Tā sedz mēbeles, fasādes, furnitūru un uzstādīšanu. ${mat.kapecIzvelaties}`,
     },
     {
-      q: `Kā ${dizainLabel(dizains)} stils atšķiras no citiem?`,
-      a: `${dizainLabel(dizains)} stils izceļas ar savdabīgu estētiku un funkcionālitāti. Mēs rūpīgi pielāgojam katru projektu klienta telpai un personiskajai gaumei.`,
+      q: `Kā ${dizainLabel(dizains)} stils piemērojas ${telpaLabel}?`,
+      a: `${diz.ievads} ${telpaInfo.risinajums} ${diz.klientiem}`,
     },
   ]
 
@@ -114,20 +152,20 @@ export default function VirtuvePage({ params }: { params: Params }) {
           { '@type': 'ListItem', position: 3, name: dizainLabel(dizains), item: `${baseUrl}/virtuves/${dizains}` },
           { '@type': 'ListItem', position: 4, name: mat.nosaukums, item: `${baseUrl}/virtuves/${dizains}/${materials}` },
           { '@type': 'ListItem', position: 5, name: telpaLabel, item: `${baseUrl}/virtuves/${dizains}/${materials}/${telpa}` },
-          { '@type': 'ListItem', position: 6, name: pilsetaLabel, item: `${baseUrl}/virtuves/${dizains}/${materials}/${telpa}/${pilseta}` },
+          { '@type': 'ListItem', position: 6, name: pilsetaLoc, item: `${baseUrl}/virtuves/${dizains}/${materials}/${telpa}/${pilseta}` },
         ],
       },
       {
         '@type': 'Product',
         name: `${dizainLabel(dizains)} iebūvējama virtuve — ${mat.nosaukums} — ${telpaLabel}`,
-        description: `Iebūvējama ${dizainLabel(dizains).toLowerCase()} virtuve no ${mat.nosaukums} ${pilsetaLabel}. Platība ${platiba}. Ražošanas laiks ${razosana}.`,
+        description: `Iebūvējama ${dizainLabel(dizains).toLowerCase()} virtuve no ${mat.nosaukums} ${telpaLabel} ${pilsetaLoc}. Platība ${platiba}. Ražošanas laiks ${razosana}.`,
         brand: { '@type': 'Brand', name: 'Iebūvējamās Virtuves' },
         offers: {
           '@type': 'Offer',
           priceCurrency: 'EUR',
           price: cena.replace(/\s/g, ''),
           availability: 'https://schema.org/InStock',
-          areaServed: { '@type': 'City', name: pilsetaLabel },
+          areaServed: { '@type': 'City', name: pilsetaCapitalized(pilseta) },
         },
       },
       {
@@ -173,7 +211,7 @@ export default function VirtuvePage({ params }: { params: Params }) {
             <li className="mx-1">/</li>
             <li><span>{telpaLabel}</span></li>
             <li className="mx-1">/</li>
-            <li className="text-brand-dark/70 font-medium">{pilsetaLabel}</li>
+            <li className="text-brand-dark/70 font-medium">{pilsetaLoc}</li>
           </ol>
         </nav>
 
@@ -182,13 +220,16 @@ export default function VirtuvePage({ params }: { params: Params }) {
           <div className="max-w-4xl mx-auto">
             <span className="gold-line"></span>
             <p className="text-brand-gold text-xs tracking-[0.2em] uppercase mb-3 font-inter">
-              {telpaLabel} · {platiba} · {pilsetaLabel}
+              {telpaLabel} · {platiba} · {pilsetaLoc}
             </p>
             <h1 className="font-cormorant text-4xl md:text-6xl font-light leading-tight mb-4">
               {dizainLabel(dizains)} iebūvējama virtuve
             </h1>
-            <p className="font-cormorant text-xl md:text-2xl text-white/70 italic mb-8">
+            <p className="font-cormorant text-xl md:text-2xl text-white/70 italic mb-4">
               {mat.nosaukums} — no €{cena} · {razosana}
+            </p>
+            <p className="text-white/50 text-sm font-inter mb-8 max-w-2xl">
+              {telpaInfo.ievads}
             </p>
             <CtaHero {...ctaProps} />
           </div>
@@ -204,7 +245,7 @@ export default function VirtuvePage({ params }: { params: Params }) {
                 <div key={i} className="relative aspect-[4/3] overflow-hidden group">
                   <Image
                     src={url}
-                    alt={`${dizainLabel(dizains)} iebūvējama virtuve ${mat.nosaukums} ${telpaLabel} ${pilsetaLabel}`}
+                    alt={`${dizainLabel(dizains)} iebūvējama virtuve ${mat.nosaukums} ${telpaLabel} ${pilsetaLoc}`}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -213,11 +254,12 @@ export default function VirtuvePage({ params }: { params: Params }) {
                 </div>
               ))}
             </div>
-            {/* IEDVESMAS CTA */}
             <div className="mt-8 pt-8 border-t border-brand-dark/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <p className="font-cormorant text-lg text-brand-dark/60 italic">Vairāk dizainu un projektu iedvesmai</p>
               <a
                 href="https://iebuvejamasvirtuves.lv"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border border-brand-dark/30 text-brand-dark text-xs tracking-[0.15em] uppercase px-6 py-3 hover:border-brand-gold hover:text-brand-gold transition-all duration-300 font-inter whitespace-nowrap"
               >
                 Dizaini iedvesmai →
@@ -249,6 +291,47 @@ export default function VirtuvePage({ params }: { params: Params }) {
           </div>
         </section>
 
+        {/* TELPAS KONTEKSTS */}
+        <section className="max-w-4xl mx-auto px-6 py-12">
+          <span className="gold-line"></span>
+          <h2 className="font-cormorant text-3xl font-light mb-3">{telpaLabel} — ko jāzina</h2>
+          <p className="text-brand-dark/70 font-inter text-sm leading-relaxed mb-8 max-w-2xl">{telpaInfo.ievads}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="border-l border-brand-gold pl-5">
+              <p className="font-cormorant text-lg font-medium mb-1">Izaicinājumi</p>
+              <p className="text-brand-dark/60 text-sm font-inter leading-relaxed">{telpaInfo.izaicinaums}</p>
+            </div>
+            <div className="border-l border-brand-gold pl-5">
+              <p className="font-cormorant text-lg font-medium mb-1">Mūsu risinājums</p>
+              <p className="text-brand-dark/60 text-sm font-inter leading-relaxed">{telpaInfo.risinajums}</p>
+            </div>
+          </div>
+          <div className="mt-6 bg-brand-cream p-5">
+            <p className="text-xs text-brand-gold uppercase tracking-widest mb-2 font-inter">Ieteikums</p>
+            <p className="text-brand-dark/70 text-sm font-inter leading-relaxed">{telpaInfo.padomi}</p>
+          </div>
+        </section>
+
+        {/* DIZAINA STILS */}
+        <section className="bg-brand-cream">
+          <div className="max-w-4xl mx-auto px-6 py-12">
+            <span className="gold-line"></span>
+            <h2 className="font-cormorant text-3xl font-light mb-3">{dizainLabel(dizains)} stils</h2>
+            <p className="text-brand-dark/70 font-inter text-sm leading-relaxed mb-8 max-w-2xl">{diz.ievads}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="border-l border-brand-gold pl-5">
+                <p className="font-cormorant text-lg font-medium mb-1">Raksturojums</p>
+                <p className="text-brand-dark/60 text-sm font-inter leading-relaxed">{diz.raksturojiems}</p>
+              </div>
+              <div className="border-l border-brand-gold pl-5">
+                <p className="font-cormorant text-lg font-medium mb-1">Materiāli šim stilam</p>
+                <p className="text-brand-dark/60 text-sm font-inter leading-relaxed">{diz.materiali}</p>
+              </div>
+            </div>
+            <p className="mt-6 text-xs text-brand-dark/40 font-inter uppercase tracking-widest">{diz.klientiem}</p>
+          </div>
+        </section>
+
         {/* MATERIĀLA APRAKSTS */}
         <section className="max-w-4xl mx-auto px-6 py-12">
           <span className="gold-line"></span>
@@ -266,6 +349,25 @@ export default function VirtuvePage({ params }: { params: Params }) {
                 <p className="text-brand-dark/60 text-sm font-inter leading-relaxed">{text}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* PILSĒTAS INFORMĀCIJA */}
+        <section className="bg-brand-cream">
+          <div className="max-w-4xl mx-auto px-6 py-12">
+            <span className="gold-line"></span>
+            <h2 className="font-cormorant text-3xl font-light mb-3">{pilsetaInfo.pakalpojumsVirsraksts}</h2>
+            <p className="text-brand-dark/70 font-inter text-sm leading-relaxed mb-8 max-w-2xl">{pilsetaInfo.ievads}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="border-l border-brand-gold pl-5">
+                <p className="font-cormorant text-lg font-medium mb-1">Piegāde un uzstādīšana</p>
+                <p className="text-brand-dark/60 text-sm font-inter leading-relaxed">{pilsetaInfo.pievedums}</p>
+              </div>
+              <div className="border-l border-brand-gold pl-5">
+                <p className="font-cormorant text-lg font-medium mb-1">Montāža {pilsetaLoc}</p>
+                <p className="text-brand-dark/60 text-sm font-inter leading-relaxed">{pilsetaInfo.montaza}</p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -361,10 +463,10 @@ export default function VirtuvePage({ params }: { params: Params }) {
         </section>
 
         {/* CTA FORMA */}
-        <section className="bg-brand-dark text-white">
+        <section id="forma" className="bg-brand-dark text-white">
           <div className="max-w-4xl mx-auto px-6 py-16 text-center">
             <span className="block w-12 h-px bg-brand-gold mx-auto mb-6"></span>
-            <h2 className="font-cormorant text-4xl md:text-5xl font-light mb-3">Saņemt bezmaksas konsultāciju</h2>
+            <h2 className="font-cormorant text-4xl md:text-5xl font-light mb-3">Saņemt bezmaksas konsultāciju {pilsetaLoc}</h2>
             <p className="text-white/50 text-sm font-inter mb-10">Mēs sazināsimies vienas darba dienas laikā</p>
             <CtaForm {...ctaProps} />
           </div>
