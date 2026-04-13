@@ -12,7 +12,7 @@ type Props = {
 export function CtaHero({ dizains, materials, telpa, pilseta }: Props) {
   return (
     <a
-      href="https://iebuvejamasvirtuves.lv"
+      href="#forma"
       onClick={() => sendGAEvent('event', 'cta_click', {
         cta_location: 'hero',
         dizains,
@@ -30,7 +30,7 @@ export function CtaHero({ dizains, materials, telpa, pilseta }: Props) {
 export function CtaSticky({ dizains, materials, telpa, pilseta }: Props) {
   return (
     <a
-      href="https://iebuvejamasvirtuves.lv"
+      href="#forma"
       onClick={() => sendGAEvent('event', 'cta_click', {
         cta_location: 'sticky_bar',
         dizains,
@@ -48,7 +48,7 @@ export function CtaSticky({ dizains, materials, telpa, pilseta }: Props) {
 export function CtaFloating({ dizains, materials, telpa, pilseta }: Props) {
   return (
     <a
-      href="https://iebuvejamasvirtuves.lv"
+      href="#forma"
       onClick={() => sendGAEvent('event', 'cta_click', {
         cta_location: 'floating_button',
         dizains,
@@ -57,9 +57,9 @@ export function CtaFloating({ dizains, materials, telpa, pilseta }: Props) {
         pilseta,
       })}
       className="fixed bottom-6 right-6 z-50 bg-brand-gold text-brand-dark text-xs tracking-[0.12em] uppercase font-inter font-medium px-5 py-3 shadow-2xl hover:bg-brand-dark hover:text-brand-gold border border-brand-gold transition-all duration-300 flex items-center gap-2"
-      aria-label="Saņemt bezmaksas konsultāciju"
+      aria-label="Saņemt savu sapņu virtuves projektu 24h laikā"
     >
-      <span>Konsultācija</span>
+      <span>Saņemt savu sapņu virtuves projektu 24h laikā</span>
       <span className="text-base leading-none">→</span>
     </a>
   )
@@ -68,6 +68,7 @@ export function CtaFloating({ dizains, materials, telpa, pilseta }: Props) {
 export function CtaForm({ dizains, materials, telpa, pilseta }: Props) {
   return (
     <form
+      id="forma"
       action="https://formspree.io/f/mojkjwrp"
       method="POST"
       className="max-w-md mx-auto space-y-3 text-left"

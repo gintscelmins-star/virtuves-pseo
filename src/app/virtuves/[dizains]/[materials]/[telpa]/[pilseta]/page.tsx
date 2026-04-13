@@ -213,6 +213,16 @@ export default function VirtuvePage({ params }: { params: Params }) {
                 </div>
               ))}
             </div>
+            {/* IEDVESMAS CTA */}
+            <div className="mt-8 pt-8 border-t border-brand-dark/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <p className="font-cormorant text-lg text-brand-dark/60 italic">Vairāk dizainu un projektu iedvesmai</p>
+              <a
+                href="https://iebuvejamasvirtuves.lv"
+                className="inline-flex items-center gap-2 border border-brand-dark/30 text-brand-dark text-xs tracking-[0.15em] uppercase px-6 py-3 hover:border-brand-gold hover:text-brand-gold transition-all duration-300 font-inter whitespace-nowrap"
+              >
+                Dizaini iedvesmai →
+              </a>
+            </div>
           </section>
         )}
 
